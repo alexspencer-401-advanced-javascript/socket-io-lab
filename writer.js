@@ -6,6 +6,8 @@ socket.on('file-write', data => {
   return writeFile(data.path, data.contents)
     .then(data => {
       socket.emit('file-saved', data)
-
+  })
+  .catch((error) => {
+    socket.emit('file-error', error);
   })
 })
