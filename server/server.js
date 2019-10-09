@@ -6,4 +6,10 @@ io.on('connection', socket => {
     console.log(data);
     socket.broadcast.emit('file-read', data);
   });
+
+  socket.on('file-write', data => {
+    console.log(data);
+  })
+
+
 })
