@@ -4,6 +4,6 @@ io.on('connection', socket => {
 
   socket.on('file-read', data => {
     console.log(data);
-    
+    socket.broadcast.emit('file-read', data);
   });
 })
